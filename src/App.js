@@ -49,6 +49,7 @@ class App extends Component {
     let make = this.refs.selectedMake.value
     // axios (GET)
     // setState with response -> vehiclesToDisplay
+    axios.get(`https://joes-autos.herokuapp.com/api/vehicles?make=${make}`).then(response => this.setState({vehiclesToDisplay: response.data}))
   }
 
   filterByColor() {
