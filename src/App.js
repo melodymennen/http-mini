@@ -63,7 +63,7 @@ class App extends Component {
   updatePrice(priceChange) {
     // axios (PUT)
     // setState with response -> vehiclesToDisplay
-    axios.put(`https://joes-autos.herokuapp.com/api/vehicles/${id}/${change}`)
+    // axios.put(`https://joes-autos.herokuapp.com/api/vehicles/${id}/${change}`)
   }
   
   addCar(){
@@ -93,6 +93,7 @@ class App extends Component {
     // axios (GET)
     // setState with response -> buyersToDisplay
     let searchLetters = this.refs.searchLetters.value;
+    axios.get(`https://joes-autos.herokuapp.com/api/buyers?name=${searchLetters}`).then(response => this.setState({buyersToDisplay: response.data}))
   }
   
   byYear() {
