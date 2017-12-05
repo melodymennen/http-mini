@@ -55,6 +55,7 @@ class App extends Component {
     let color = this.refs.selectedColor.value;
     // axios (GET)
     // setState with response -> vehiclesToDisplay
+    axios.get(`https://joes-autos.herokuapp.com/api/vehicles?color=${color}`).then(response => this.setState({vehiclesToDisplay: response.data}))
   }
 
   updatePrice(priceChange) {
@@ -72,7 +73,7 @@ class App extends Component {
   }  
   // axios (POST)
   // setState with response -> vehiclesToDisplay
-  
+
 }
 
 addBuyer() {
