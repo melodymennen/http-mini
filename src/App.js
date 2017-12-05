@@ -58,45 +58,46 @@ class App extends Component {
     // setState with response -> vehiclesToDisplay
     axios.get(`https://joes-autos.herokuapp.com/api/vehicles?color=${color}`).then(response => this.setState({vehiclesToDisplay: response.data}))
   }
-
+  
   updatePrice(priceChange) {
     // axios (PUT)
     // setState with response -> vehiclesToDisplay
   }
-
+  
   addCar(){
-  let newCar = {
-    make: this.refs.make.value,
-    model: this.refs.model.value,
-    color: this.refs.color.value,
-    year: this.refs.year.value,
-    price: this.refs.price.value
-  }  
-  // axios (POST)
-  // setState with response -> vehiclesToDisplay
-
-}
-
-addBuyer() {
-  let newBuyer ={
-    name: this.refs.name.value,
-    phone: this.refs.phone.value,
-    address: this.refs.address.value
+    let newCar = {
+      make: this.refs.make.value,
+      model: this.refs.model.value,
+      color: this.refs.color.value,
+      year: this.refs.year.value,
+      price: this.refs.price.value
+    }  
+    // axios (POST)
+    // setState with response -> vehiclesToDisplay
+    
   }
-  //axios (POST)
-  // setState with response -> buyersToDisplay
-}
-
-nameSearch() {
-  // axios (GET)
-  // setState with response -> buyersToDisplay
-  let searchLetters = this.refs.searchLetters.value;
-}
-
-byYear() {
-  let year = this.refs.searchYear.value;
-  // axios (GET)
-  // setState with response -> vehiclesToDisplay
+  
+  addBuyer() {
+    let newBuyer ={
+      name: this.refs.name.value,
+      phone: this.refs.phone.value,
+      address: this.refs.address.value
+    }
+    //axios (POST)
+    // setState with response -> buyersToDisplay
+  }
+  
+  nameSearch() {
+    // axios (GET)
+    // setState with response -> buyersToDisplay
+    let searchLetters = this.refs.searchLetters.value;
+  }
+  
+  byYear() {
+    let year = this.refs.searchYear.value;
+    // axios (GET)
+    // setState with response -> vehiclesToDisplay
+    axios.get(`https://joes-autos.herokuapp.com/api/vehicles?year=${year}`).then(response => this.setState({vehiclesToDisplay: response.data}))
 }
 
 // ==============================================
