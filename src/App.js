@@ -87,6 +87,7 @@ class App extends Component {
     }
     //axios (POST)
     // setState with response -> buyersToDisplay
+    axios.post('https://joes-autos.herokuapp.com/api/buyers', newBuyer).then(response => this.setState({buyersToDisplay: response.data.buyers}))
   }
   
   nameSearch() {
